@@ -1,1 +1,84 @@
-<p>add-product works!</p>
+<br>
+<div class= "offset-md-4 col-md-12">
+    <form (submit)="RegisterProduct(Nombre,Stock,Precio,Descripcion)" class="form-group">
+        <!-- Form Name -->
+        <legend>Registrar Nuevo Producto</legend>
+        
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label " for="fname">Nombre</label>  
+            <div class="col-md-4"> 
+            <input type="text" placeholder="Nombre" class="form-control input-md" required="" #Nombre>         
+            </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Stock</label>  
+            <div class="col-md-4">
+            <input type="text" placeholder="Stock" class="form-control input-md" required="" #Stock>         
+            </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Precio Q.</label>  
+            <div class="col-md-4">
+            <input type="text" placeholder="Precio" class="form-control input-md" required="" #Precio> 
+            </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+                <label class="col-md-4 control-label" for="email">Descripcion</label>  
+                <div class="col-md-4">
+                <input type="text" placeholder="Descripcion" class="form-control input-md" required="" #Descripcion> 
+                </div>
+        </div>
+        <!-- Button (Double) -->
+        <div class="form-group">
+            <div class="col-md-8">
+            <button class="btn btn-success col-md-2 ">OK</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+<div class= "offset-md-4 col-md-12">
+    <form (submit)="RegisterProvider(SelectProduct,SelectProvider)" class="form-group">
+        <!-- Form Name -->
+        <legend>Registrar Proveedores para Producto</legend>
+
+        <!--ComboBox-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Proveedor</label> 
+            <div class="col-md-4">
+                <select class="col-md-10" #SelectProduct>
+                        <option *ngFor = "let Product of Productos" value={{Product.IDProduct}}>
+                            ID: {{Product.IDProduct}} -- Nombre: {{Product.ProductName}}
+                        </option>
+                </select>
+            </div>
+        </div>      
+
+        <!--ComboBox-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="email">Proveedor</label> 
+            <div class="col-md-4">
+                <select class="col-md-10" #SelectProvider>
+                        <option *ngFor = "let Provider of Proveedores" value={{Provider.IDProvider}}>
+                            ID: {{Provider.IDProvider}} -- Nombre: {{Provider.ProviderName}}
+                        </option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+            <div class="col-md-8">
+            <button class="btn btn-success col-md-2 ">OK</button>
+            </div>
+        </div>
+    </form>
+</div>

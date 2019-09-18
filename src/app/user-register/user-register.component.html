@@ -1,0 +1,46 @@
+<br>
+<div class=" offset-md-4 col-md-12">
+<form (submit)="RegisterUser(Nombres,Apellidos,Nickname,Contrasena)" class="form-group">
+    <!-- Form Name -->
+    <legend>Registrar Nuevo Usuario</legend>
+    
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label " for="fname">Nombres</label>  
+        <div class="col-md-4"> 
+        <input type="text" placeholder="Nombres" class="form-control input-md" required="" #Nombres>         
+        </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label">Apellidos</label>  
+        <div class="col-md-4">
+        <input type="text" placeholder="Apellidos" class="form-control input-md" required="" #Apellidos>         
+        </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="email">Nickname</label>  
+        <div class="col-md-4">
+        <input type="text" placeholder="Nickname" class="form-control input-md" required="" #Nickname> 
+        </div>
+    </div>
+    
+    <!-- Password input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="password">Password</label>
+        <div class="col-md-4">
+        <input type="password" placeholder="" class="form-control input-md" required="" #Contrasena>        
+        </div>
+    </div>
+    
+    <!-- Button (Double) -->
+    <div class="form-group">
+        <div class="col-md-8">
+        <button class="btn btn-success col-md-2 ">OK</button>
+        </div>
+    </div>
+</form>
+</div>

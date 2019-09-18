@@ -17,6 +17,9 @@ import { DeleteProductComponent } from './Products/delete-product/delete-product
 import { ModifyProductComponent } from './Products/modify-product/modify-product.component';
 
 import { DataService } from './data.service';
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { ReportOneComponent } from './report-one/report-one.component';
+import { ReportTwoComponent } from './report-two/report-two.component';
 
 const Rutas: Routes = [
   {
@@ -27,6 +30,9 @@ const Rutas: Routes = [
   },
   {
     path: 'admin-login', component:AdminLoginComponent
+  },
+  {
+    path: 'user-register', component:UserRegisterComponent
   },
   {
     path: 'user-module', component:UserModuleComponent,
@@ -60,6 +66,12 @@ const Rutas: Routes = [
       {
         path: 'add-provider', component: AddProviderComponent
       },
+      {
+        path: 'report-one', component:ReportOneComponent
+      },
+      {
+        path: 'report-two', component:ReportTwoComponent
+      },
     ]
   },
 
@@ -78,7 +90,10 @@ const Rutas: Routes = [
     UserModuleComponent,
     AddProviderComponent,
     AddProductComponent,
-    SearchProductComponent
+    SearchProductComponent,
+    UserRegisterComponent,
+    ReportOneComponent,
+    ReportTwoComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@
         </div>
         <table class="table">
             <thead>
-                <tr>
+                <tr>               
                     <td>ID</td>
                     <td>Producto</td>
                     <td>Stock</td>
@@ -15,21 +15,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Producto1</td>
-                    <td>XXX</td>
-                    <td>QXX.XX</td>
-                    <td>Descripcion</td>
-                    <td><button class="btn btn-success">Agregar a Carro</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Producto2</td>
-                    <td>XXX</td>
-                    <td>QXX.XX</td>
-                    <td>Descripcion</td>
-                    <td><button class="btn btn-success">Agregar a Carro</button></td>
+                <tr *ngFor = "let Product of Productos">               
+                    <td>{{Product.IDProduct}}</td>
+                    <td>{{Product.ProductName}}</td>
+                    <td>{{Product.Stock}}</td>
+                    <td>Q. {{Product.Price}}</td>
+                    <td>{{Product.Description}}</td>
+                    <td><button class="btn btn-success" id={{Product.IDProduct}} (click)="addToCar(Button)" #Button>Agregar a Carro</button></td>
                 </tr>
             </tbody>
         </table>

@@ -1,1 +1,38 @@
-<p>add-provider works!</p>
+<br>
+<div class=" offset-md-4 col-md-12">
+<form (submit)="RegisterProvider(Nombre,Direccion,Telefono)" class="form-group">
+    <!-- Form Name -->
+    <legend>Registrar Nuevo Proveedor</legend>
+    
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label " for="fname">Nombre</label>  
+        <div class="col-md-4"> 
+        <input type="text" placeholder="Nombre" class="form-control input-md" required="" #Nombre>         
+        </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label">Direccion</label>  
+        <div class="col-md-4">
+        <input type="text" placeholder="Direccion" class="form-control input-md" required="" #Direccion>         
+        </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="email">Numero de Telefono</label>  
+        <div class="col-md-4">
+        <input type="text" placeholder="Telefono" class="form-control input-md" required="" #Telefono> 
+        </div>
+    </div>
+    
+    <!-- Button (Double) -->
+    <div class="form-group">
+        <div class="col-md-8">
+        <button class="btn btn-success col-md-2 ">OK</button>
+        </div>
+    </div>
+</form>
+</div>

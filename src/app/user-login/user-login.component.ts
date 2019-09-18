@@ -20,10 +20,10 @@ export class UserLoginComponent implements OnInit {
     console.log(Password.value);
     this.dataservice.login(User.value,Password.value).subscribe(
       res =>{
-        var respuesta: string = res['inicio'];
-        console.log('respuesta '+respuesta);
+        let respuesta: string = res['inicio'];
+        console.log('Boolean Login: '+respuesta);
         if(respuesta == "1"){
-          localStorage.setItem('NickName',User.value);
+          this.saveUserId(User.value);
           this.router.navigate(['user-module']);
         }
         else{
@@ -34,6 +34,19 @@ export class UserLoginComponent implements OnInit {
         console.error(error);
       },
     );
+  }
+
+  saveUserId(NickName:string){
+    this.dataservice.getUserID(NickName).subscribe(
+      res =>{
+        let respuesta: string = res['UserID'];
+        console.log('IDUser: '+respuesta);
+        localStorage.setItem('UserID',respuesta);
+      }, (error) =>{
+        console.error(error);
+      },
+    );
+
   }
 
 }
