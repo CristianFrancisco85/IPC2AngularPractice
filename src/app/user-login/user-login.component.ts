@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service'
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { OkPacket } from '../DataTypes';
 
 @Component({
   selector: 'app-user-login',
@@ -10,14 +11,14 @@ import { Router } from '@angular/router';
 })
 export class UserLoginComponent implements OnInit {
 
+  Res : OkPacket;
+
   constructor(private dataservice : DataService , private router : Router) { }
 
   ngOnInit() {
   }
 
   logUser(User,Password){
-    console.log(User.value);
-    console.log(Password.value);
     this.dataservice.login(User.value,Password.value).subscribe(
       res =>{
         let respuesta: string = res['inicio'];
@@ -48,5 +49,6 @@ export class UserLoginComponent implements OnInit {
     );
 
   }
+
 
 }

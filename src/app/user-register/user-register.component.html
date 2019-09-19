@@ -1,6 +1,6 @@
 <br>
 <div class=" offset-md-4 col-md-12">
-<form (submit)="RegisterUser(Nombres,Apellidos,Nickname,Contrasena)" class="form-group">
+<form (submit)="RegisterUser(Nombres,Apellidos,Nickname,Contrasena,SelectType)" class="form-group">
     <!-- Form Name -->
     <legend>Registrar Nuevo Usuario</legend>
     
@@ -35,6 +35,18 @@
         <input type="password" placeholder="" class="form-control input-md" required="" #Contrasena>        
         </div>
     </div>
+
+    <!--ComboBox-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="email">Tipo de Usuario</label> 
+        <div class="col-md-4">
+            <select class="col-md-12 form-control" #SelectType>
+                    <option value="Admin">Administrador</option>
+                    <option value="User">Usuario</option>
+                    <option value="Assistant">Asistente</option>
+            </select>
+        </div>
+    </div>
     
     <!-- Button (Double) -->
     <div class="form-group">
@@ -42,5 +54,6 @@
         <button class="btn btn-success col-md-2 ">OK</button>
         </div>
     </div>
+
 </form>
 </div>

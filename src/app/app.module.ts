@@ -20,6 +20,7 @@ import { DataService } from './data.service';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { ReportOneComponent } from './report-one/report-one.component';
 import { ReportTwoComponent } from './report-two/report-two.component';
+import { ShopCarComponent } from './shop-car/shop-car.component';
 
 const Rutas: Routes = [
   {
@@ -43,6 +44,9 @@ const Rutas: Routes = [
       {
         path: 'search-product', component: SearchProductComponent
       },
+      {
+        path: 'shop-car', component: ShopCarComponent
+      }
     ]
   },
   {
@@ -93,7 +97,8 @@ const Rutas: Routes = [
     SearchProductComponent,
     UserRegisterComponent,
     ReportOneComponent,
-    ReportTwoComponent
+    ReportTwoComponent,
+    ShopCarComponent
   ],
   imports: [
     BrowserModule,

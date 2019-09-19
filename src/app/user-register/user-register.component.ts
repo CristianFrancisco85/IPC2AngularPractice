@@ -15,7 +15,7 @@ export class UserRegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  RegisterUser(Nombres,Apellidos,Nickname,Contrasena){
+  RegisterUser(Nombres,Apellidos,Nickname,Contrasena,SelectType){
     this.dataservice.checkNickName(Nickname.value).subscribe(
       res =>{
         let respuesta: string = res['inicio'];
@@ -24,7 +24,7 @@ export class UserRegisterComponent implements OnInit {
           alert("Nickname ya existe")
         }
         else{
-          this.dataservice.addUser(Nombres.value,Apellidos.value,Nickname.value,Contrasena.value)
+          this.dataservice.addUser(Nombres.value,Apellidos.value,Nickname.value,Contrasena.value,SelectType.value)
           .subscribe((result) =>{
             console.log(result);
           });

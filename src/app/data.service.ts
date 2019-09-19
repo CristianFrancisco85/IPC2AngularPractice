@@ -4,6 +4,7 @@ import {  Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Product } from './DataTypes'
 import { Provider } from './DataTypes'
+import { OkPacket } from './DataTypes'
 
 @Injectable({
   providedIn: 'root'
@@ -30,12 +31,13 @@ export class DataService {
     });  
   }
 
-  addUser(Firstname:string,SecondName:string,Nickname:string,Password:string){
+  addUser(Firstname:string,SecondName:string,Nickname:string,Password:string,UserType:string){
     return this.http.post('http://localhost:3000/newUser',{
       firstname: Firstname,
       secondname : SecondName,
       nickname : Nickname,
-      passwd : Password
+      passwd : Password,
+      usertype : UserType
     });
   }
 
@@ -60,6 +62,10 @@ export class DataService {
     });
   }
 
+  searchProducts(productname:string): Observable<Product[]> { 
+    return this.http.get<Product[]>('http://localhost:3000/searchProducts/'+productname);  
+}
+
   setProductProvider(IDProduct:number,IDProvider:number){
     return this.http.post('http://localhost:3000/setProductProvider',{
       idproduct :IDProduct,
@@ -75,6 +81,7 @@ export class DataService {
       phonenumber : PhoneNumber
     });
   }
+
   getProviders(): Observable<Provider[]> { 
     return this.http.get<Provider[]>('http://localhost:3000/getProviders');  
   } 
@@ -88,5 +95,8 @@ export class DataService {
     });   
   }
 
-
+  //------------------SHOPCAR---------------------
+  generateShopCar(){
+    return this.http.get<string>('http://localhost:3000/generateShopCar');
+  }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/DataTypes';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-search-product',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchProductComponent implements OnInit {
 
-  constructor() { }
+  Productos : Product [];
+
+  constructor(private dataservice :DataService ) { }
 
   ngOnInit() {
   }
 
+  searchProduct(ProductName){
+    console.log("Jola");
+    this.dataservice.searchProducts(ProductName.value).subscribe( Productos => this.Productos = Productos);
+  }
 }

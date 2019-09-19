@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OkPacket } from '../DataTypes';
+import {DataService} from '../data.service'
 
 @Component({
   selector: 'app-user-module',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserModuleComponent implements OnInit {
 
-  constructor() { }
+  Res:string;
+
+  constructor(private dataservice : DataService ) { }
 
   ngOnInit() {
+    this.dataservice.generateShopCar().subscribe( Respuesta => {localStorage.setItem('ShopCarID',Respuesta);});
   }
 
 }

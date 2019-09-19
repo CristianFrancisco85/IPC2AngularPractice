@@ -1,1 +1,42 @@
-<p>search-product works!</p>
+<br>
+<div class="col-md-12">
+    <h3 class="panel-title text-center">Buscar Productos</h3>
+    <br>
+    <!-- Text input-->     
+    <label class="col-md-4 control-label " for="fname">Nombre de Producto</label>  
+    <div class="col-md-4"> 
+        <input (keyup)="searchProduct(Nombre)" type="text" placeholder="Nombre" class="form-control input-md" required="" #Nombre>         
+    </div>
+</div>
+<br>
+<br>
+<div class="offset-md-3 col-md-6">
+    <div class="panel panel-primary mx-auto">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">Productos</h3>
+        </div>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>               
+                    <td>ID</td>
+                    <td>Producto</td>
+                    <td>Stock</td>
+                    <td>Precio</td>
+                    <td>Descripcion</td>
+                    <td> </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let Product of Productos">               
+                    <td>{{Product.IDProduct}}</td>
+                    <td>{{Product.ProductName}}</td>
+                    <td>{{Product.Stock}}</td>
+                    <td>Q. {{Product.Price}}</td>
+                    <td>{{Product.Description}}</td>
+                    <td><button class="btn btn-success" id={{Product.IDProduct}} (click)="addToCar(Button)" #Button>Agregar a Carro</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -21,6 +21,7 @@ export class ProductListComponent implements OnInit {
   addToCar(Button){
     var idproduct = Button.id;
     console.log(idproduct);
+    
   }
 
 }
