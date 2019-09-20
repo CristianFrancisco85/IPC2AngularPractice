@@ -19,9 +19,31 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCar(Button){
-    var idproduct = Button.id;
-    console.log(idproduct);
-    
+    var idproduct : number  = Button.id;
+    var idshopcar : number  = parseInt(localStorage.getItem('ShopCarID'));
+    var stock : number;
+    //Se obtiene Stock
+    this.dataservice.getProductStock(idproduct).subscribe(
+      res =>{
+        stock = res['ProductStock'];
+        console.log('Stock: '+stock);
+        if(stock>0){
+          stock--;
+          console.log('Stock Nuevo : '+stock);
+          this.dataservice.updateProductStock(idproduct,stock).subscribe();
+          //Se agrega a Carro
+          this.dataservice.addProductToShopCar(idproduct,idshopcar).subscribe();
+          //Se actualiza Stock en interfaz
+          this.dataservice.getProducts().subscribe( Productos => this.Productos = Productos);
+          alert("Producto Agregado al Carro");
+        }
+        else{
+          alert("Producto Agotado")
+        }
+      }, (error) =>{
+        console.error(error);
+      },
+    );
   }
 
 }

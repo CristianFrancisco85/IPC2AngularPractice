@@ -1,1 +1,25 @@
-<p>report-two works!</p>
+<div class="row">
+        <div class="panel panel-primary mx-auto">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Reporte de Compras por Clientes</h3>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>               
+                        <td>ID</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Cantidad de  Compras</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let Report of Reports">               
+                        <td>{{Report.IDUser}}</td>
+                        <td>{{Report.FirstName}}</td>
+                        <td>{{Report.SecondName}}</td>
+                        <td>{{Report.Times}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

@@ -24,7 +24,8 @@
                     <td>Stock</td>
                     <td>Precio</td>
                     <td>Descripcion</td>
-                    <td> </td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +35,8 @@
                     <td>{{Product.Stock}}</td>
                     <td>Q. {{Product.Price}}</td>
                     <td>{{Product.Description}}</td>
-                    <td><button class="btn btn-success" id={{Product.IDProduct}} (click)="addToCar(Button)" #Button>Agregar a Carro</button></td>
+                    <td><button class="btn btn-danger" id={{Product.IDProduct}} (click)="deleteProduct(ButtonDel)" #ButtonDel>Eliminar Producto</button></td>
+                    <td><button class="btn btn-primary" id={{Product.IDProduct}} (click)="editProduct(ButtonEdi)" #ButtonEdi>Editar Producto</button></td>
                 </tr>
             </tbody>
         </table>

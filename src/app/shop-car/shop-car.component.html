@@ -1,1 +1,22 @@
-<p>shop-car works!</p>
+<div class="row">
+    <div class="panel panel-primary mx-auto">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">Productos en Carrito</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>               
+                    <td>ID</td>
+                    <td>Producto</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let Product of Productos">               
+                    <td>{{Product.IDProduct}}</td>
+                    <td>{{Product.ProductName}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <td><button class="btn btn-success" (click)="buyProducts()">Finalizar Compra</button></td>
+    </div>
+</div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Report2 } from 'src/app/DataTypes';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-report-two',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportTwoComponent implements OnInit {
 
-  constructor() { }
+  Reports : Report2 [];
+
+  constructor(private dataservice :DataService ) { }
 
   ngOnInit() {
+    this.dataservice.ReportTwo().subscribe( Res => this.Reports = Res);
   }
 
 }

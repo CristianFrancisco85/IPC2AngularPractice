@@ -13,7 +13,6 @@ import { UserModuleComponent } from './user-module/user-module.component';
 import { AddProviderComponent } from './Providers/add-provider/add-provider.component';
 import { AddProductComponent } from './Products/add-product/add-product.component';
 import { SearchProductComponent } from './Products/search-product/search-product.component';
-import { DeleteProductComponent } from './Products/delete-product/delete-product.component';
 import { ModifyProductComponent } from './Products/modify-product/modify-product.component';
 
 import { DataService } from './data.service';
@@ -21,6 +20,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { ReportOneComponent } from './report-one/report-one.component';
 import { ReportTwoComponent } from './report-two/report-two.component';
 import { ShopCarComponent } from './shop-car/shop-car.component';
+import { SearchProductAdminComponent } from './Products/search-product-admin/search-product-admin.component';
 
 const Rutas: Routes = [
   {
@@ -59,13 +59,10 @@ const Rutas: Routes = [
         path: 'add-product', component:AddProductComponent
       },
       {
-        path: 'delete-product', component:DeleteProductComponent
-      },
-      {
         path: 'modify-product', component: ModifyProductComponent
       },
       {
-        path: 'search-product', component: SearchProductComponent
+        path: 'search-product-admin', component: SearchProductAdminComponent
       },
       {
         path: 'add-provider', component: AddProviderComponent
@@ -86,7 +83,6 @@ const Rutas: Routes = [
   declarations: [
     AppComponent,
     UserLoginComponent,
-    DeleteProductComponent,
     AdminLoginComponent,
     ModifyProductComponent,
     ProductListComponent,
@@ -98,7 +94,8 @@ const Rutas: Routes = [
     UserRegisterComponent,
     ReportOneComponent,
     ReportTwoComponent,
-    ShopCarComponent
+    ShopCarComponent,
+    SearchProductAdminComponent
   ],
   imports: [
     BrowserModule,

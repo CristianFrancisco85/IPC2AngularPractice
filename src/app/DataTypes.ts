@@ -52,3 +52,16 @@ export interface OkPacket {
     "protocol41": boolean;
     "changedRows": number;
 }
+
+export interface Report1 {
+    "IDProduct": number;
+    "ProductName": string;
+    "Times": number;
+}
+
+export interface Report2 {
+    "IDUser": number;
+    "FirstName": string;
+    "SecondtName": string;
+    "Times": number;
+}

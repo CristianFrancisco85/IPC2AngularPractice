@@ -14,6 +14,7 @@ export class UserModuleComponent implements OnInit {
   constructor(private dataservice : DataService ) { }
 
   ngOnInit() {
+    localStorage.removeItem('BillID');
     this.dataservice.generateShopCar().subscribe( Respuesta => {localStorage.setItem('ShopCarID',Respuesta);});
   }
 
